@@ -1900,7 +1900,7 @@ function setMobileTabActive(tabKey) {
 // ============================================================================
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
+    navigator.serviceWorker.register('./sw.js?v=3.0')
       .then((reg) => console.log('[PWA] Service Worker registrado con éxito:', reg.scope))
       .catch((err) => console.warn('[PWA] No se pudo registrar Service Worker:', err));
   });

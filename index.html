@@ -2,21 +2,45 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Grafos | Teoría de Grafos y Análisis de Redes</title>
   
+  <script>
+    // Desbloqueo y purga forzada de Service Worker / Caché residual en Android Chrome
+    (function() {
+      const TARGET_VERSION = 'grafos-v3.0-mobile-fix';
+      const current = localStorage.getItem('grafos_pwa_build');
+      if (current !== TARGET_VERSION) {
+        localStorage.setItem('grafos_pwa_build', TARGET_VERSION);
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            for (let r of regs) { r.unregister(); }
+          });
+        }
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            for (let n of names) { caches.delete(n); }
+          });
+        }
+        if (current) {
+          window.location.reload(true);
+        }
+      }
+    })();
+  </script>
+
   <!-- PWA & Favicon Meta -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json?v=3.0">
   <meta name="theme-color" content="#12141c">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Grafos Studio">
   
-  <link rel="stylesheet" href="styles.css?v=2.1">
+  <link rel="stylesheet" href="styles.css?v=3.0">
   <!-- D3.js v7 local con fallback a CDN -->
   <script src="d3.v7.min.js"></script>
   <script>
@@ -516,6 +540,6 @@
   <div id="toastContainer" class="toast-container"></div>
 
   <!-- Script Principal -->
-  <script src="app.js?v=2.1"></script>
+  <script src="app.js?v=3.0"></script>
 </body>
 </html>
