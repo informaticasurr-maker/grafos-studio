@@ -32,14 +32,14 @@
       <img src="icon-192.png" alt="Logo Grafos" class="brand-logo-img">
       <div class="brand-info">
         <h1>GRAFOS <span>Enterprise</span></h1>
-        <p class="subtitle">Teoría de Grafos & Análisis de Redes (Recluta 22)</p>
+        <p class="subtitle">Teoría de Grafos & Redes (Recluta 22)</p>
       </div>
     </div>
 
-    <!-- Acciones Rápidas Centrales -->
-    <div class="header-controls">
+    <!-- Acciones Rápidas Centrales (Desktop) -->
+    <div class="header-controls desktop-only">
       <div class="dataset-selector-wrapper">
-        <label for="datasetSelect">Dataset Activo:</label>
+        <label for="datasetSelect">Dataset:</label>
         <select id="datasetSelect" class="hud-select">
           <option value="multiplication">Tablas de Multiplicar (0 al 9)</option>
           <option value="microservices">Red de Microservicios Cloud</option>
@@ -50,29 +50,29 @@
 
       <div class="search-box">
         <span class="search-icon">🔍</span>
-        <input type="text" id="nodeSearchInput" placeholder="Buscar nodo por número o etiqueta..." autocomplete="off">
+        <input type="text" id="nodeSearchInput" placeholder="Buscar nodo..." autocomplete="off">
         <button id="clearSearchBtn" class="hud-btn-icon" title="Limpiar">✕</button>
         <div id="searchSuggestions" class="search-suggestions"></div>
       </div>
     </div>
 
-    <!-- Acciones de Seguridad y Exportación -->
+    <!-- Acciones de Seguridad y Exportación (Desktop & Quick Mobile) -->
     <div class="header-actions">
-      <!-- Botón Forjador con IA -->
-      <button id="openAiForgeModalBtn" class="hud-btn ai-forge-btn" title="Crear nuevo grafo con IA">
+      <!-- Botón Forjador con IA (Desktop) -->
+      <button id="openAiForgeModalBtn" class="hud-btn ai-forge-btn desktop-only" title="Crear nuevo grafo con IA">
         <span class="icon">✨</span>
         <span>Crear con IA</span>
       </button>
 
-      <!-- Bóveda BYOK Zero-Knowledge -->
-      <button id="openVaultBtn" class="hud-btn vault-btn" title="Bóveda de API Keys Segura">
+      <!-- Bóveda BYOK Zero-Knowledge (Desktop) -->
+      <button id="openVaultBtn" class="hud-btn vault-btn desktop-only" title="Bóveda de API Keys Segura">
         <span class="vault-icon">🔒</span>
         <span class="vault-text">Bóveda BYOK</span>
         <span id="vaultStatusIndicator" class="vault-status-dot offline" title="Modo Offline Seguro"></span>
       </button>
 
-      <!-- Menú Exportar -->
-      <div class="dropdown">
+      <!-- Menú Exportar (Desktop) -->
+      <div class="dropdown desktop-only">
         <button id="exportDropdownBtn" class="hud-btn export-btn">
           <span>📥 Exportar</span>
           <span class="arrow">▼</span>
@@ -85,15 +85,31 @@
         </div>
       </div>
 
+      <!-- Buscador Rápido en Móvil -->
+      <button id="mobileSearchTriggerBtn" class="hud-btn-icon mobile-only" title="Buscar Nodo">🔍</button>
       <button id="fitViewBtn" class="hud-btn-icon" title="Ajustar Vista al Centro">🎯</button>
-      <button id="toggleFullscreenBtn" class="hud-btn-icon" title="Pantalla Completa">⛶</button>
+      <button id="toggleFullscreenBtn" class="hud-btn-icon desktop-only" title="Pantalla Completa">⛶</button>
     </div>
   </header>
 
-  <!-- Cuerpo Principal (Grid de 3 columnas: Toolbar Izquierda, Lienzo Central, Inspector Derecho) -->
+  <!-- Barra de búsqueda flotante móvil -->
+  <div id="mobileSearchBar" class="mobile-search-bar" style="display: none;">
+    <input type="text" id="mobileNodeSearchInput" placeholder="Buscar nodo por número o nombre..." autocomplete="off">
+    <button id="closeMobileSearchBtn" class="hud-btn-mini">✕</button>
+    <div id="mobileSearchSuggestions" class="search-suggestions"></div>
+  </div>
+
+  <!-- Cuerpo Principal (Grid en Desktop, Capas en Móvil) -->
   <main class="app-layout">
-    <!-- BARRA LATERAL IZQUIERDA: Físicas, Layout y Filtros -->
-    <aside class="sidebar-left">
+    <!-- BARRA LATERAL IZQUIERDA: Físicas, Layout y Filtros (En móvil se comporta como Drawer) -->
+    <aside class="sidebar-left" id="sidebarLeft">
+      <div class="mobile-drawer-header">
+        <div class="drawer-drag-handle"></div>
+        <div class="drawer-title-row">
+          <span class="drawer-title">⚡ Físicas & Distribución</span>
+          <button class="close-drawer-btn" data-close="sidebarLeft">✕</button>
+        </div>
+      </div>
       <div class="sidebar-section">
         <div class="section-header">
           <h3>📐 Algoritmo de Distribución</h3>
@@ -230,8 +246,16 @@
       </div>
     </section>
 
-    <!-- BARRA LATERAL DERECHA: Inspector de Nodos & Métricas -->
-    <aside class="sidebar-right">
+    <!-- BARRA LATERAL DERECHA: Inspector de Nodos & Métricas (En móvil se comporta como Drawer) -->
+    <aside class="sidebar-right" id="sidebarRight">
+      <div class="mobile-drawer-header">
+        <div class="drawer-drag-handle"></div>
+        <div class="drawer-title-row">
+          <span class="drawer-title">📊 Ficha de Nodo & Métricas</span>
+          <button class="close-drawer-btn" data-close="sidebarRight">✕</button>
+        </div>
+      </div>
+
       <!-- Tarjeta del Nodo Seleccionado -->
       <div class="inspector-card" id="inspectorCard">
         <div class="inspector-header">
@@ -243,7 +267,7 @@
         </div>
 
         <div class="inspector-body" id="inspectorBody">
-          <p class="empty-state-text">Haz clic o posa el cursor sobre cualquier nodo en el lienzo para inspeccionar sus propiedades matemáticas, operaciones multiplicativas y conexiones.</p>
+          <p class="empty-state-text">Haz clic o toca cualquier nodo en el lienzo para inspeccionar sus propiedades matemáticas, operaciones multiplicativas y conexiones.</p>
         </div>
       </div>
 
@@ -285,6 +309,82 @@
       </div>
     </aside>
   </main>
+
+  <!-- DRAWER: Menú & Ajustes para Móviles -->
+  <aside class="mobile-menu-drawer" id="mobileMenuDrawer">
+    <div class="mobile-drawer-header">
+      <div class="drawer-drag-handle"></div>
+      <div class="drawer-title-row">
+        <span class="drawer-title">⚙️ Ajustes & Centro de Mando</span>
+        <button class="close-drawer-btn" data-close="mobileMenuDrawer">✕</button>
+      </div>
+    </div>
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-item" id="mobileTriggerVault">
+        <div class="menu-item-icon">🔒</div>
+        <div class="menu-item-text">
+          <strong>Bóveda BYOK Zero-Knowledge</strong>
+          <span>Gestionar y verificar API Keys de IA en memoria</span>
+        </div>
+        <span class="menu-arrow">›</span>
+      </div>
+
+      <div class="mobile-menu-item" id="mobileTriggerAiForge">
+        <div class="menu-item-icon">✨</div>
+        <div class="menu-item-text">
+          <strong>Forjador de Grafos con IA</strong>
+          <span>Crear nueva red desde lenguaje natural o datos</span>
+        </div>
+        <span class="menu-arrow">›</span>
+      </div>
+
+      <div class="mobile-menu-section">
+        <label>Dataset Activo:</label>
+        <select id="mobileDatasetSelect" class="hud-select" style="width: 100%; margin-top: 6px;">
+          <option value="multiplication">Tablas de Multiplicar (0 al 9)</option>
+          <option value="microservices">Red de Microservicios Cloud</option>
+          <option value="custom">Cargar Archivo JSON...</option>
+        </select>
+      </div>
+
+      <div class="mobile-menu-section">
+        <label>Descargar / Exportar:</label>
+        <div class="mobile-export-grid">
+          <button class="hud-btn" id="mobileExportPngBtn">📸 Imagen PNG</button>
+          <button class="hud-btn" id="mobileExportSvgBtn">📐 Vectorial SVG</button>
+          <button class="hud-btn" id="mobileExportJsonBtn">💾 Estructura JSON</button>
+          <button class="hud-btn" id="mobileExportMdBtn">📝 Reporte MD</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Telón de Fondo Transparente para Drawers Móviles -->
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+
+  <!-- BARRA DE NAVEGACIÓN INFERIOR PARA MÓVILES (Estilo App Nativa) -->
+  <nav class="mobile-bottom-nav">
+    <button class="nav-tab-btn active" data-tab="canvas">
+      <span class="tab-icon">🌐</span>
+      <span class="tab-label">Grafo</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="physics">
+      <span class="tab-icon">⚡</span>
+      <span class="tab-label">Físicas</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="ai">
+      <span class="tab-icon">✨</span>
+      <span class="tab-label">Crear IA</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="inspector">
+      <span class="tab-icon">📊</span>
+      <span class="tab-label">Ficha</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="menu">
+      <span class="tab-icon">⚙️</span>
+      <span class="tab-label">Ajustes</span>
+    </button>
+  </nav>
 
   <!-- MODAL: Bóveda de Seguridad para API Keys (BYOK Zero-Knowledge) -->
   <div id="vaultModal" class="modal-backdrop" style="display: none;">

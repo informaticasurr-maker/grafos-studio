@@ -1350,3 +1350,382 @@ input:checked + .toggle-slider:before {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* ==========================================================================
+   7. Arquitectura Móvil & Capas Responsive (Mobile-First Layered Design)
+   ========================================================================== */
+
+/* Reglas por defecto de visibilidad en escritorio */
+.mobile-only {
+  display: none !important;
+}
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+.mobile-drawer-header {
+  display: none;
+}
+
+.mobile-menu-drawer {
+  display: none;
+}
+
+.drawer-backdrop {
+  display: none;
+}
+
+.mobile-search-bar {
+  display: none;
+}
+
+/* ==========================================================================
+   MEDIA QUERY: Teléfonos Móviles y Tablets Compactas (<= 900px)
+   ========================================================================== */
+@media (max-width: 900px) {
+  :root {
+    --header-height: 56px;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  body {
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* Cabecera ultra-compacta */
+  .app-header {
+    height: var(--header-height);
+    padding: 0 0.85rem;
+  }
+
+  .brand-logo-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-info h1 {
+    font-size: 0.95rem;
+  }
+
+  .brand-info .subtitle {
+    display: none;
+  }
+
+  /* Grid pasa a ser lienzo 100% full screen */
+  .app-layout {
+    display: block;
+    position: relative;
+    height: calc(100vh - var(--header-height) - 64px);
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .canvas-container {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+  }
+
+  /* HUD superior compacto */
+  .canvas-hud-overlay {
+    top: 0.6rem;
+    left: 0.6rem;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    max-width: 90vw;
+  }
+
+  .hud-chip {
+    padding: 0.25rem 0.55rem;
+    font-size: 0.68rem;
+  }
+
+  .density-chip {
+    display: none; /* Ahorrar espacio en pantalla angosta */
+  }
+
+  /* Minimap reducido */
+  .minimap-wrapper {
+    bottom: 0.75rem;
+    left: 0.75rem;
+    transform: scale(0.85);
+    transform-origin: bottom left;
+  }
+
+  /* Zoom controls */
+  .zoom-floating-bar {
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+
+  /* Barra de búsqueda flotante en móvil */
+  .mobile-search-bar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0; right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--accent-cyan);
+    padding: 0.6rem 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1300;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+  }
+
+  .mobile-search-bar input {
+    flex: 1;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: 0.55rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    outline: none;
+  }
+
+  /* Paneles laterales transformados en DRAWERS / BOTTOM SHEETS */
+  .sidebar-left,
+  .sidebar-right,
+  .mobile-menu-drawer {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    max-height: 82vh !important;
+    width: 100vw !important;
+    border-radius: 20px 20px 0 0 !important;
+    background: rgba(18, 20, 28, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.85) !important;
+    border-top: 1px solid var(--accent-cyan) !important;
+    border-left: none !important;
+    border-right: none !important;
+    transform: translateY(110%) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    z-index: 1500 !important;
+    overflow-y: auto !important;
+    padding: 0.75rem 1.25rem 2.5rem 1.25rem !important;
+  }
+
+  .sidebar-left.open,
+  .sidebar-right.open,
+  .mobile-menu-drawer.open {
+    transform: translateY(0) !important;
+  }
+
+  /* Encabezado y Asidero del Drawer (Bottom Sheet) */
+  .mobile-drawer-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    position: sticky;
+    top: 0;
+    background: rgba(18, 20, 28, 0.98);
+    padding-top: 0.25rem;
+    z-index: 10;
+  }
+
+  .drawer-drag-handle {
+    width: 44px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .drawer-title-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0;
+  }
+
+  .drawer-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .close-drawer-btn {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  /* Telón de fondo (Backdrop) */
+  .drawer-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1350;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-out;
+  }
+
+  .drawer-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Barra de navegación inferior móvil (BOTTOM NAV BAR) */
+  .mobile-bottom-nav {
+    display: grid;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 64px;
+    background: rgba(14, 16, 24, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-subtle);
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+    z-index: 1200;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  .nav-tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-height: 48px;
+    min-width: 48px;
+    width: 100%;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .nav-tab-btn .tab-icon {
+    font-size: 1.25rem;
+  }
+
+  .nav-tab-btn .tab-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+  }
+
+  .nav-tab-btn.active {
+    color: var(--accent-cyan);
+  }
+
+  .nav-tab-btn.active .tab-icon {
+    filter: drop-shadow(0 0 8px var(--accent-cyan));
+  }
+
+  /* Contenido del Drawer de Ajustes Móviles */
+  .mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .mobile-menu-item {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+  }
+
+  .menu-item-icon {
+    font-size: 1.4rem;
+  }
+
+  .menu-item-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .menu-item-text strong {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+  }
+
+  .menu-item-text span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .menu-arrow {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+  }
+
+  .mobile-menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+
+  .mobile-menu-section label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .mobile-export-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .mobile-export-grid .hud-btn {
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  /* Modales en móvil: ancho completo */
+  .modal-card {
+    width: 95% !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+
+  .form-row-dual {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+}
