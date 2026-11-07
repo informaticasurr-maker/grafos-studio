@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grafos | Teoría de Grafos y Análisis de Redes</title>
+  
+  <!-- PWA & Favicon Meta -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#12141c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Grafos Studio">
+  
+  <link rel="stylesheet" href="styles.css">
+  <!-- D3.js v7 local con fallback a CDN -->
+  <script src="d3.v7.min.js"></script>
+  <script>
+    if (typeof d3 === 'undefined') {
+      document.write('<script src="https://d3js.org/d3.v7.min.js"><\/script>');
+    }
+  </script>
+</head>
+<body class="theme-dark">
+  <!-- Cabecera Superior (Top Navigation HUD) -->
+  <header class="app-header">
+    <div class="brand">
+      <img src="icon-192.png" alt="Logo Grafos" class="brand-logo-img">
+      <div class="brand-info">
+        <h1>GRAFOS <span>Enterprise</span></h1>
+        <p class="subtitle">Teoría de Grafos & Análisis de Redes (Recluta 22)</p>
+      </div>
+    </div>
+
+    <!-- Acciones Rápidas Centrales -->
+    <div class="header-controls">
+      <div class="dataset-selector-wrapper">
+        <label for="datasetSelect">Dataset Activo:</label>
+        <select id="datasetSelect" class="hud-select">
+          <option value="multiplication">Tablas de Multiplicar (0 al 9)</option>
+          <option value="microservices">Red de Microservicios Cloud</option>
+          <option value="custom">Cargar Archivo JSON...</option>
+        </select>
+        <input type="file" id="jsonFileInput" accept=".json" style="display: none;">
+      </div>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="nodeSearchInput" placeholder="Buscar nodo por número o etiqueta..." autocomplete="off">
+        <button id="clearSearchBtn" class="hud-btn-icon" title="Limpiar">✕</button>
+        <div id="searchSuggestions" class="search-suggestions"></div>
+      </div>
+    </div>
+
+    <!-- Acciones de Seguridad y Exportación -->
+    <div class="header-actions">
+      <!-- Botón Forjador con IA -->
+      <button id="openAiForgeModalBtn" class="hud-btn ai-forge-btn" title="Crear nuevo grafo con IA">
+        <span class="icon">✨</span>
+        <span>Crear con IA</span>
+      </button>
+
+      <!-- Bóveda BYOK Zero-Knowledge -->
+      <button id="openVaultBtn" class="hud-btn vault-btn" title="Bóveda de API Keys Segura">
+        <span class="vault-icon">🔒</span>
+        <span class="vault-text">Bóveda BYOK</span>
+        <span id="vaultStatusIndicator" class="vault-status-dot offline" title="Modo Offline Seguro"></span>
+      </button>
+
+      <!-- Menú Exportar -->
+      <div class="dropdown">
+        <button id="exportDropdownBtn" class="hud-btn export-btn">
+          <span>📥 Exportar</span>
+          <span class="arrow">▼</span>
+        </button>
+        <div class="dropdown-content">
+          <a href="#" id="exportPngBtn">📸 Imagen PNG en Alta Resolución</a>
+          <a href="#" id="exportSvgBtn">📐 Vectorial SVG Nítido</a>
+          <a href="#" id="exportJsonBtn">💾 Estructura JSON del Grafo</a>
+          <a href="#" id="exportMarkdownBtn">📝 Reporte Topológico (Markdown)</a>
+        </div>
+      </div>
+
+      <button id="fitViewBtn" class="hud-btn-icon" title="Ajustar Vista al Centro">🎯</button>
+      <button id="toggleFullscreenBtn" class="hud-btn-icon" title="Pantalla Completa">⛶</button>
+    </div>
+  </header>
+
+  <!-- Cuerpo Principal (Grid de 3 columnas: Toolbar Izquierda, Lienzo Central, Inspector Derecho) -->
+  <main class="app-layout">
+    <!-- BARRA LATERAL IZQUIERDA: Físicas, Layout y Filtros -->
+    <aside class="sidebar-left">
+      <div class="sidebar-section">
+        <div class="section-header">
+          <h3>📐 Algoritmo de Distribución</h3>
+        </div>
+        <div class="layout-buttons-grid">
+          <button class="layout-btn active" data-layout="force">
+            <span class="icon">⚛️</span>
+            <span>Force (Física)</span>
+          </button>
+          <button class="layout-btn" data-layout="concentric">
+            <span class="icon">🎯</span>
+            <span>Concéntrico</span>
+          </button>
+          <button class="layout-btn" data-layout="circular">
+            <span class="icon">⭕</span>
+            <span>Circular</span>
+          </button>
+          <button class="layout-btn" data-layout="grid">
+            <span class="icon">▦</span>
+            <span>Grilla Matricial</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Controles de Simulación Física -->
+      <div class="sidebar-section" id="physicsSection">
+        <div class="section-header">
+          <h3>⚡ Físicas en Tiempo Real</h3>
+          <button id="resetPhysicsBtn" class="hud-btn-mini">Reset</button>
+        </div>
+
+        <div class="control-row">
+          <div class="label-with-value">
+            <label for="chargeSlider">Repulsión de Nodos:</label>
+            <span id="chargeVal" class="metric-val">-350</span>
+          </div>
+          <input type="range" id="chargeSlider" min="-1200" max="-50" step="10" value="-350">
+        </div>
+
+        <div class="control-row">
+          <div class="label-with-value">
+            <label for="distanceSlider">Distancia de Enlaces:</label>
+            <span id="distanceVal" class="metric-val">80</span>
+          </div>
+          <input type="range" id="distanceSlider" min="20" max="300" step="5" value="80">
+        </div>
+
+        <div class="control-row">
+          <div class="label-with-value">
+            <label for="gravitySlider">Gravedad Central:</label>
+            <span id="gravityVal" class="metric-val">0.15</span>
+          </div>
+          <input type="range" id="gravitySlider" min="0.0" max="1.0" step="0.02" value="0.15">
+        </div>
+
+        <div class="control-row">
+          <div class="label-with-value">
+            <label for="collisionSlider">Colisión Anti-Solapamiento:</label>
+            <span id="collisionVal" class="metric-val">25</span>
+          </div>
+          <input type="range" id="collisionSlider" min="5" max="80" step="2" value="25">
+        </div>
+
+        <div class="control-row-toggle">
+          <label class="toggle-switch">
+            <input type="checkbox" id="freezePhysicsToggle">
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">Congelar Física (Estabilizar)</span>
+        </div>
+      </div>
+
+      <!-- Filtros Dinámicos -->
+      <div class="sidebar-section">
+        <div class="section-header">
+          <h3>🎛️ Filtros Topológicos</h3>
+        </div>
+
+        <div class="control-row">
+          <div class="label-with-value">
+            <label for="degreeFilterSlider">Grado Mínimo:</label>
+            <span id="degreeFilterVal" class="metric-val">0</span>
+          </div>
+          <input type="range" id="degreeFilterSlider" min="0" max="25" step="1" value="0">
+        </div>
+
+        <div class="control-row-toggle">
+          <label class="toggle-switch">
+            <input type="checkbox" id="showEdgeLabelsToggle" checked>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">Mostrar Etiquetas de Aristas</span>
+        </div>
+
+        <div class="control-row-toggle">
+          <label class="toggle-switch">
+            <input type="checkbox" id="highlightEgoToggle" checked>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">Atenuar Red al Hover (Ego-Net)</span>
+        </div>
+
+        <!-- Filtro por Grupos/Familias -->
+        <div class="group-filter-list" id="groupFilterList">
+          <div class="group-header-label">Familias Detectadas:</div>
+          <div id="groupBadges" class="group-badges"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ÁREA CENTRAL: Lienzo Interactivo SVG / D3 -->
+    <section class="canvas-container" id="canvasContainer">
+      <div class="canvas-hud-overlay">
+        <div class="hud-chip"><span id="hudNodeCount">0</span> nodos</div>
+        <div class="hud-chip"><span id="hudEdgeCount">0</span> conexiones</div>
+        <div class="hud-chip density-chip">Densidad: <span id="hudDensity">0.000</span></div>
+        <div class="hud-chip info-chip" id="hudStatusMsg">Listo</div>
+      </div>
+
+      <!-- SVG D3 Principal -->
+      <svg id="graphSvg" class="main-graph-svg"></svg>
+
+      <!-- Mini-mapa (Radar) -->
+      <div class="minimap-wrapper" id="minimapWrapper">
+        <div class="minimap-title">RADAR TOPOLÓGICO</div>
+        <canvas id="minimapCanvas" width="160" height="110"></canvas>
+      </div>
+
+      <!-- Barra flotante de zoom rápido -->
+      <div class="zoom-floating-bar">
+        <button id="zoomInBtn" class="zoom-btn" title="Acercar">+</button>
+        <button id="zoomResetBtn" class="zoom-btn" title="100%">1:1</button>
+        <button id="zoomOutBtn" class="zoom-btn" title="Alejar">−</button>
+      </div>
+    </section>
+
+    <!-- BARRA LATERAL DERECHA: Inspector de Nodos & Métricas -->
+    <aside class="sidebar-right">
+      <!-- Tarjeta del Nodo Seleccionado -->
+      <div class="inspector-card" id="inspectorCard">
+        <div class="inspector-header">
+          <div class="node-avatar-preview" id="inspectAvatar">?</div>
+          <div class="node-header-details">
+            <h2 id="inspectTitle">Selecciona un Nodo</h2>
+            <span id="inspectBadge" class="type-badge">Sin selección</span>
+          </div>
+        </div>
+
+        <div class="inspector-body" id="inspectorBody">
+          <p class="empty-state-text">Haz clic o posa el cursor sobre cualquier nodo en el lienzo para inspeccionar sus propiedades matemáticas, operaciones multiplicativas y conexiones.</p>
+        </div>
+      </div>
+
+      <!-- Métricas Globales del Grafo -->
+      <div class="global-metrics-card">
+        <h3>📊 Métricas Globales</h3>
+        <div class="metric-tiles-grid">
+          <div class="metric-tile">
+            <span class="tile-title">Nodos Actores</span>
+            <span class="tile-number" id="metricTotalNodes">--</span>
+          </div>
+          <div class="metric-tile">
+            <span class="tile-title">Total Aristas</span>
+            <span class="tile-number" id="metricTotalEdges">--</span>
+          </div>
+          <div class="metric-tile">
+            <span class="tile-title">Mayor Atractor</span>
+            <span class="tile-number highlight" id="metricTopAttractor">--</span>
+          </div>
+          <div class="metric-tile">
+            <span class="tile-title">Conexión Máxima</span>
+            <span class="tile-number" id="metricMaxDegree">--</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asistente de IA (Consultas sobre la Topología con BYOK) -->
+      <div class="ai-assistant-card">
+        <div class="ai-header">
+          <span class="ai-spark">✨</span>
+          <h3>Análisis de Red Asistido (LLM)</h3>
+        </div>
+        <p class="ai-subtext">Formula preguntas sobre la topología usando la clave configurada en la Bóveda Zero-Knowledge.</p>
+        <div class="ai-input-wrapper">
+          <textarea id="aiPromptInput" rows="2" placeholder="Ej: ¿Cuáles son los números con mayor convergencia y por qué?"></textarea>
+          <button id="askAiBtn" class="hud-btn ai-send-btn">Consultar</button>
+        </div>
+        <div id="aiResponseBox" class="ai-response-box" style="display: none;"></div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- MODAL: Bóveda de Seguridad para API Keys (BYOK Zero-Knowledge) -->
+  <div id="vaultModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-with-icon">
+          <span class="modal-shield-icon">🛡️</span>
+          <div>
+            <h2>Bóveda de Credenciales Zero-Knowledge</h2>
+            <p>Bring Your Own Key (BYOK) Cifrada en Memoria Volátil del Navegador</p>
+          </div>
+        </div>
+        <button id="closeVaultBtn" class="close-modal-btn">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="security-guarantee-box">
+          <div class="guarantee-icon">🔒</div>
+          <div class="guarantee-text">
+            <strong>Garantía de Seguridad Bancaria:</strong> Tu API Key se cifra exclusivamente en la memoria de tu pestaña mediante <code>Web Cryptography API (AES-256-GCM)</code>. <strong>Nunca</strong> se envía a ningún servidor backend, proxy intermedio ni se guarda en disco. Las consultas se ejecutan directamente desde tu navegador hacia el proveedor mediante HTTPS seguro.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="aiProviderSelect">Proveedor de Inteligencia Artificial:</label>
+          <select id="aiProviderSelect" class="hud-select modal-select">
+            <option value="groq">Groq (Qwen 3.8 / GPT-OSS - Ultra Rápido)</option>
+            <option value="gemini">Google Gemini (Gemini 2.0 / Flash - Requiere clave AIzaSy...)</option>
+            <option value="nvidia">NVIDIA NIM (DeepSeek / Llama NIM - Clave nvapi-...)</option>
+            <option value="openrouter">OpenRouter (Multi-Proveedor - Clave sk-or-...)</option>
+            <option value="openai">OpenAI (GPT-4o / GPT-4o-mini - Clave sk-...)</option>
+            <option value="local">Ollama / Servidor Local (http://localhost:11434)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label for="apiKeyInput">API Key del Proveedor:</label>
+            <span id="detectedProviderTag" style="font-size: 0.72rem; color: var(--accent-cyan); display: none;"></span>
+          </div>
+          <div class="password-wrapper">
+            <input type="password" id="apiKeyInput" placeholder="Pega tu clave (gsk_..., nvapi-..., AIzaSy..., sk-...)" autocomplete="off">
+            <button id="toggleShowKeyBtn" class="toggle-show-btn">👁️</button>
+          </div>
+          <div id="keyHelperMessage" class="input-helper" style="line-height: 1.4; margin-top: 4px;">
+            Auto-detecta tu proveedor al pegar la clave. Se cifra en memoria volátil sin persistencia en disco.
+          </div>
+        </div>
+
+        <div class="vault-status-box" id="vaultStatusBox">
+          <span class="status-bullet offline"></span>
+          <span id="vaultStatusMessage">Estado: Bóveda en reposo (Modo Local / No-AI Activo).</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="purgeKeysBtn" class="hud-btn btn-danger">🔥 Purgar Clave</button>
+        <div class="footer-right">
+          <button id="testKeyBtn" class="hud-btn btn-secondary">🧪 Probar Conexión</button>
+          <button id="cancelVaultBtn" class="hud-btn btn-secondary">Cancelar</button>
+          <button id="saveKeyBtn" class="hud-btn btn-primary">🔐 Cifrar y Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Forjador de Grafos con IA (Prompt a Red Topológica) -->
+  <div id="aiForgeModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card modal-card-large">
+      <div class="modal-header">
+        <div class="modal-title-with-icon">
+          <span class="modal-shield-icon" style="color: var(--accent-purple);">✨</span>
+          <div>
+            <h2>Forjador de Grafos con IA</h2>
+            <p>Convierte texto libre, descripciones o datos crudos en una red interactiva</p>
+          </div>
+        </div>
+        <button id="closeAiForgeBtn" class="close-modal-btn">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="aiGraphTitleInput">Título del Grafo:</label>
+          <input type="text" id="aiGraphTitleInput" class="hud-input" placeholder="Ej: Red de Rutas Aéreas, Arquitectura E-commerce, etc.">
+        </div>
+
+        <div class="form-group">
+          <label for="aiGraphPrompt">Describe la red o pega tus datos (CSV, listas, relaciones, ideas):</label>
+          <textarea id="aiGraphPrompt" rows="6" class="hud-textarea" placeholder="Ej: Crea una red que muestre la relación entre clientes, órdenes de compra, pasarelas de pago y almacenes. Los clientes compran productos y las pasarelas procesan las transacciones..."></textarea>
+          <span class="input-helper">El Recluta 22 procesará las entidades, deducirá las conexiones, asignará tamaños, colores y calculará la topología mediante tu API Key segura.</span>
+        </div>
+
+        <div class="form-row-dual">
+          <div class="form-group">
+            <label for="aiGraphPalette">Paleta de Colores:</label>
+            <select id="aiGraphPalette" class="hud-select">
+              <option value="cyber">Cyberpunk Neón (Cian, Púrpura, Fucsia)</option>
+              <option value="corporate">Corporativo (Cobalto, Esmeralda, Slate)</option>
+              <option value="sunset">Sunset Gradient (Ámbar, Naranja, Carmesí)</option>
+              <option value="emerald">Matrix Esmeralda & Menta</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="aiGraphDirection">Tipo de Conexiones:</label>
+            <select id="aiGraphDirection" class="hud-select">
+              <option value="directed">Aristas Dirigidas (con flechas de flujo)</option>
+              <option value="undirected">Red No Dirigida (enlaces bidireccionales)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="aiForgeLoadingIndicator" class="ai-loading-box" style="display: none;">
+          <div class="spinner"></div>
+          <span>El Recluta 22 está sintetizando el modelo topológico y construyendo el grafo...</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="cancelAiForgeBtn" class="hud-btn btn-secondary">Cancelar</button>
+        <button id="submitAiForgeBtn" class="hud-btn btn-primary-ai">
+          <span>🚀 Forjar y Renderizar en Vivo</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notificaciones -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Script Principal -->
+  <script src="app.js"></script>
+</body>
+</html>

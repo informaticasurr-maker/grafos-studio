@@ -1,0 +1,2680 @@
+{
+  "graph_metadata": {
+    "title": "Red Topológica de las Tablas de Multiplicar (0 al 9)",
+    "directed": true,
+    "node_count": 37,
+    "edge_count": 127,
+    "metrics": {
+      "node_count": 37,
+      "edge_count": 127,
+      "density": 0.08483,
+      "has_networkx": true
+    }
+  },
+  "nodes": [
+    {
+      "id": "num_0",
+      "label": "[0]",
+      "group": "absorbente",
+      "val": 48.5,
+      "color": "#f43f5e",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 0,
+        "es_primo": false,
+        "es_par": true,
+        "cuadrado": 0,
+        "descripcion": "Dígito base generador 0",
+        "caminos_multiplicacion": 19,
+        "combinaciones": [
+          "0x0",
+          "0x1",
+          "0x2",
+          "0x3",
+          "0x4",
+          "0x5",
+          "0x6",
+          "0x7",
+          "0x8",
+          "0x9",
+          "1x0",
+          "2x0",
+          "3x0",
+          "4x0",
+          "5x0",
+          "6x0",
+          "7x0",
+          "8x0",
+          "9x0"
+        ],
+        "es_cuadrado_perfecto": true,
+        "in_degree": 10,
+        "out_degree": 1,
+        "total_degree": 11,
+        "betweenness": 0.0,
+        "pagerank": 0.23221,
+        "closeness": 0.25,
+        "detected_community": "cluster_7"
+      }
+    },
+    {
+      "id": "num_1",
+      "label": "[1]",
+      "group": "neutro",
+      "val": 21.5,
+      "color": "#64748b",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 1,
+        "es_primo": false,
+        "es_par": false,
+        "cuadrado": 1,
+        "descripcion": "Dígito base generador 1",
+        "caminos_multiplicacion": 1,
+        "combinaciones": [
+          "1x1"
+        ],
+        "es_cuadrado_perfecto": true,
+        "in_degree": 1,
+        "out_degree": 18,
+        "total_degree": 19,
+        "betweenness": 0.0,
+        "pagerank": 0.01842,
+        "closeness": 0.0,
+        "detected_community": "cluster_7"
+      }
+    },
+    {
+      "id": "num_2",
+      "label": "[2]",
+      "group": "factor_primo",
+      "val": 23.0,
+      "color": "#06b6d4",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 2,
+        "es_primo": true,
+        "es_par": true,
+        "cuadrado": 4,
+        "descripcion": "Dígito base generador 2",
+        "caminos_multiplicacion": 2,
+        "combinaciones": [
+          "1x2",
+          "2x1"
+        ],
+        "in_degree": 3,
+        "out_degree": 17,
+        "total_degree": 20,
+        "betweenness": 0.00119,
+        "pagerank": 0.02004,
+        "closeness": 0.02778,
+        "detected_community": "cluster_0"
+      }
+    },
+    {
+      "id": "num_3",
+      "label": "[3]",
+      "group": "factor_primo",
+      "val": 23.0,
+      "color": "#06b6d4",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 3,
+        "es_primo": true,
+        "es_par": false,
+        "cuadrado": 9,
+        "descripcion": "Dígito base generador 3",
+        "caminos_multiplicacion": 2,
+        "combinaciones": [
+          "1x3",
+          "3x1"
+        ],
+        "in_degree": 4,
+        "out_degree": 16,
+        "total_degree": 20,
+        "betweenness": 0.00317,
+        "pagerank": 0.02084,
+        "closeness": 0.05556,
+        "detected_community": "cluster_0"
+      }
+    },
+    {
+      "id": "num_4",
+      "label": "[4]",
+      "group": "factor_digito",
+      "val": 24.5,
+      "color": "#38bdf8",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 4,
+        "es_primo": false,
+        "es_par": true,
+        "cuadrado": 16,
+        "descripcion": "Dígito base generador 4",
+        "caminos_multiplicacion": 3,
+        "combinaciones": [
+          "1x4",
+          "2x2",
+          "4x1"
+        ],
+        "es_cuadrado_perfecto": true,
+        "in_degree": 6,
+        "out_degree": 15,
+        "total_degree": 21,
+        "betweenness": 0.00615,
+        "pagerank": 0.02171,
+        "closeness": 0.08333,
+        "detected_community": "cluster_3"
+      }
+    },
+    {
+      "id": "num_5",
+      "label": "[5]",
+      "group": "factor_primo",
+      "val": 23.0,
+      "color": "#06b6d4",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 5,
+        "es_primo": true,
+        "es_par": false,
+        "cuadrado": 25,
+        "descripcion": "Dígito base generador 5",
+        "caminos_multiplicacion": 2,
+        "combinaciones": [
+          "1x5",
+          "5x1"
+        ],
+        "in_degree": 6,
+        "out_degree": 14,
+        "total_degree": 20,
+        "betweenness": 0.01429,
+        "pagerank": 0.02254,
+        "closeness": 0.11111,
+        "detected_community": "cluster_4"
+      }
+    },
+    {
+      "id": "num_6",
+      "label": "[6]",
+      "group": "factor_digito",
+      "val": 26.0,
+      "color": "#38bdf8",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 6,
+        "es_primo": false,
+        "es_par": true,
+        "cuadrado": 36,
+        "descripcion": "Dígito base generador 6",
+        "caminos_multiplicacion": 4,
+        "combinaciones": [
+          "1x6",
+          "2x3",
+          "3x2",
+          "6x1"
+        ],
+        "in_degree": 9,
+        "out_degree": 13,
+        "total_degree": 22,
+        "betweenness": 0.01389,
+        "pagerank": 0.02352,
+        "closeness": 0.13889,
+        "detected_community": "cluster_5"
+      }
+    },
+    {
+      "id": "num_7",
+      "label": "[7]",
+      "group": "factor_primo",
+      "val": 23.0,
+      "color": "#06b6d4",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 7,
+        "es_primo": true,
+        "es_par": false,
+        "cuadrado": 49,
+        "descripcion": "Dígito base generador 7",
+        "caminos_multiplicacion": 2,
+        "combinaciones": [
+          "1x7",
+          "7x1"
+        ],
+        "in_degree": 8,
+        "out_degree": 12,
+        "total_degree": 20,
+        "betweenness": 0.02341,
+        "pagerank": 0.0246,
+        "closeness": 0.16667,
+        "detected_community": "cluster_1"
+      }
+    },
+    {
+      "id": "num_8",
+      "label": "[8]",
+      "group": "factor_digito",
+      "val": 26.0,
+      "color": "#38bdf8",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 8,
+        "es_primo": false,
+        "es_par": true,
+        "cuadrado": 64,
+        "descripcion": "Dígito base generador 8",
+        "caminos_multiplicacion": 4,
+        "combinaciones": [
+          "1x8",
+          "2x4",
+          "4x2",
+          "8x1"
+        ],
+        "in_degree": 11,
+        "out_degree": 11,
+        "total_degree": 22,
+        "betweenness": 0.02421,
+        "pagerank": 0.0258,
+        "closeness": 0.19444,
+        "detected_community": "cluster_2"
+      }
+    },
+    {
+      "id": "num_9",
+      "label": "[9]",
+      "group": "factor_digito",
+      "val": 24.5,
+      "color": "#38bdf8",
+      "metadata": {
+        "tipo": "digito_base",
+        "valor_numerico": 9,
+        "es_primo": false,
+        "es_par": false,
+        "cuadrado": 81,
+        "descripcion": "Dígito base generador 9",
+        "caminos_multiplicacion": 3,
+        "combinaciones": [
+          "1x9",
+          "3x3",
+          "9x1"
+        ],
+        "es_cuadrado_perfecto": true,
+        "in_degree": 11,
+        "out_degree": 10,
+        "total_degree": 21,
+        "betweenness": 0.02877,
+        "pagerank": 0.02713,
+        "closeness": 0.22222,
+        "detected_community": "cluster_6"
+      }
+    },
+    {
+      "id": "num_10",
+      "label": "10",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 10,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 0,
+        "combinaciones": [
+          "2x5",
+          "5x2"
+        ],
+        "descripcion": "Producto 10 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02028,
+        "closeness": 0.08681,
+        "detected_community": "cluster_0"
+      }
+    },
+    {
+      "id": "num_12",
+      "label": "12",
+      "group": "alta_convergencia",
+      "val": 22.8,
+      "color": "#a855f7",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 12,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 4,
+        "ultimo_digito": 2,
+        "combinaciones": [
+          "2x6",
+          "3x4",
+          "4x3",
+          "6x2"
+        ],
+        "descripcion": "Producto 12 generado por 4 operaciones",
+        "in_degree": 4,
+        "out_degree": 0,
+        "total_degree": 4,
+        "betweenness": 0.0,
+        "pagerank": 0.02372,
+        "closeness": 0.125,
+        "detected_community": "cluster_0"
+      }
+    },
+    {
+      "id": "num_14",
+      "label": "14",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 14,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 4,
+        "combinaciones": [
+          "2x7",
+          "7x2"
+        ],
+        "descripcion": "Producto 14 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02061,
+        "closeness": 0.11343,
+        "detected_community": "cluster_0"
+      }
+    },
+    {
+      "id": "num_16",
+      "label": "16",
+      "group": "cuadrado_perfecto",
+      "val": 20.6,
+      "color": "#ec4899",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 16,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": true,
+        "caminos_multiplicacion": 3,
+        "ultimo_digito": 6,
+        "combinaciones": [
+          "2x8",
+          "4x4",
+          "8x2"
+        ],
+        "descripcion": "Producto 16 generado por 3 operaciones",
+        "in_degree": 3,
+        "out_degree": 0,
+        "total_degree": 3,
+        "betweenness": 0.0,
+        "pagerank": 0.02165,
+        "closeness": 0.13675,
+        "detected_community": "cluster_0"
+      }
+    },
+    {
+      "id": "num_18",
+      "label": "18",
+      "group": "alta_convergencia",
+      "val": 22.8,
+      "color": "#a855f7",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 18,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 4,
+        "ultimo_digito": 8,
+        "combinaciones": [
+          "2x9",
+          "3x6",
+          "6x3",
+          "9x2"
+        ],
+        "descripcion": "Producto 18 generado por 4 operaciones",
+        "in_degree": 4,
+        "out_degree": 0,
+        "total_degree": 4,
+        "betweenness": 0.0,
+        "pagerank": 0.02447,
+        "closeness": 0.16071,
+        "detected_community": "cluster_0"
+      }
+    },
+    {
+      "id": "num_15",
+      "label": "15",
+      "group": "producto_impar",
+      "val": 18.4,
+      "color": "#f59e0b",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 15,
+        "es_par": false,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 5,
+        "combinaciones": [
+          "3x5",
+          "5x3"
+        ],
+        "descripcion": "Producto 15 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02027,
+        "closeness": 0.08681,
+        "detected_community": "cluster_0"
+      }
+    },
+    {
+      "id": "num_21",
+      "label": "21",
+      "group": "producto_impar",
+      "val": 18.4,
+      "color": "#f59e0b",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 21,
+        "es_par": false,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 1,
+        "combinaciones": [
+          "3x7",
+          "7x3"
+        ],
+        "descripcion": "Producto 21 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02059,
+        "closeness": 0.11343,
+        "detected_community": "cluster_0"
+      }
+    },
+    {
+      "id": "num_24",
+      "label": "24",
+      "group": "alta_convergencia",
+      "val": 22.8,
+      "color": "#a855f7",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 24,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 4,
+        "ultimo_digito": 4,
+        "combinaciones": [
+          "3x8",
+          "4x6",
+          "6x4",
+          "8x3"
+        ],
+        "descripcion": "Producto 24 generado por 4 operaciones",
+        "in_degree": 4,
+        "out_degree": 0,
+        "total_degree": 4,
+        "betweenness": 0.0,
+        "pagerank": 0.02429,
+        "closeness": 0.14815,
+        "detected_community": "cluster_2"
+      }
+    },
+    {
+      "id": "num_27",
+      "label": "27",
+      "group": "producto_impar",
+      "val": 18.4,
+      "color": "#f59e0b",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 27,
+        "es_par": false,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 7,
+        "combinaciones": [
+          "3x9",
+          "9x3"
+        ],
+        "descripcion": "Producto 27 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02103,
+        "closeness": 0.14062,
+        "detected_community": "cluster_6"
+      }
+    },
+    {
+      "id": "num_20",
+      "label": "20",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 20,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 0,
+        "combinaciones": [
+          "4x5",
+          "5x4"
+        ],
+        "descripcion": "Producto 20 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02034,
+        "closeness": 0.08681,
+        "detected_community": "cluster_3"
+      }
+    },
+    {
+      "id": "num_28",
+      "label": "28",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 28,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 8,
+        "combinaciones": [
+          "4x7",
+          "7x4"
+        ],
+        "descripcion": "Producto 28 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02066,
+        "closeness": 0.11343,
+        "detected_community": "cluster_3"
+      }
+    },
+    {
+      "id": "num_32",
+      "label": "32",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 32,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 2,
+        "combinaciones": [
+          "4x8",
+          "8x4"
+        ],
+        "descripcion": "Producto 32 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02086,
+        "closeness": 0.12698,
+        "detected_community": "cluster_2"
+      }
+    },
+    {
+      "id": "num_36",
+      "label": "36",
+      "group": "cuadrado_perfecto",
+      "val": 20.6,
+      "color": "#ec4899",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 36,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": true,
+        "caminos_multiplicacion": 3,
+        "ultimo_digito": 6,
+        "combinaciones": [
+          "4x9",
+          "6x6",
+          "9x4"
+        ],
+        "descripcion": "Producto 36 generado por 3 operaciones",
+        "in_degree": 3,
+        "out_degree": 0,
+        "total_degree": 3,
+        "betweenness": 0.0,
+        "pagerank": 0.02201,
+        "closeness": 0.15,
+        "detected_community": "cluster_3"
+      }
+    },
+    {
+      "id": "num_25",
+      "label": "25",
+      "group": "cuadrado_perfecto",
+      "val": 16.2,
+      "color": "#ec4899",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 25,
+        "es_par": false,
+        "es_primo": false,
+        "es_cuadrado_perfecto": true,
+        "caminos_multiplicacion": 1,
+        "ultimo_digito": 5,
+        "combinaciones": [
+          "5x5"
+        ],
+        "descripcion": "Producto 25 generado por 1 operaciones",
+        "in_degree": 1,
+        "out_degree": 0,
+        "total_degree": 1,
+        "betweenness": 0.0,
+        "pagerank": 0.01783,
+        "closeness": 0.07716,
+        "detected_community": "cluster_4"
+      }
+    },
+    {
+      "id": "num_30",
+      "label": "30",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 30,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 0,
+        "combinaciones": [
+          "5x6",
+          "6x5"
+        ],
+        "descripcion": "Producto 30 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02048,
+        "closeness": 0.1,
+        "detected_community": "cluster_5"
+      }
+    },
+    {
+      "id": "num_35",
+      "label": "35",
+      "group": "producto_impar",
+      "val": 18.4,
+      "color": "#f59e0b",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 35,
+        "es_par": false,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 5,
+        "combinaciones": [
+          "5x7",
+          "7x5"
+        ],
+        "descripcion": "Producto 35 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02065,
+        "closeness": 0.11343,
+        "detected_community": "cluster_4"
+      }
+    },
+    {
+      "id": "num_40",
+      "label": "40",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 40,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 0,
+        "combinaciones": [
+          "5x8",
+          "8x5"
+        ],
+        "descripcion": "Producto 40 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02085,
+        "closeness": 0.12698,
+        "detected_community": "cluster_4"
+      }
+    },
+    {
+      "id": "num_45",
+      "label": "45",
+      "group": "producto_impar",
+      "val": 18.4,
+      "color": "#f59e0b",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 45,
+        "es_par": false,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 5,
+        "combinaciones": [
+          "5x9",
+          "9x5"
+        ],
+        "descripcion": "Producto 45 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02109,
+        "closeness": 0.14062,
+        "detected_community": "cluster_6"
+      }
+    },
+    {
+      "id": "num_42",
+      "label": "42",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 42,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 2,
+        "combinaciones": [
+          "6x7",
+          "7x6"
+        ],
+        "descripcion": "Producto 42 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.0208,
+        "closeness": 0.11343,
+        "detected_community": "cluster_1"
+      }
+    },
+    {
+      "id": "num_48",
+      "label": "48",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 48,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 8,
+        "combinaciones": [
+          "6x8",
+          "8x6"
+        ],
+        "descripcion": "Producto 48 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.021,
+        "closeness": 0.12698,
+        "detected_community": "cluster_5"
+      }
+    },
+    {
+      "id": "num_54",
+      "label": "54",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 54,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 4,
+        "combinaciones": [
+          "6x9",
+          "9x6"
+        ],
+        "descripcion": "Producto 54 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02124,
+        "closeness": 0.14062,
+        "detected_community": "cluster_5"
+      }
+    },
+    {
+      "id": "num_49",
+      "label": "49",
+      "group": "cuadrado_perfecto",
+      "val": 16.2,
+      "color": "#ec4899",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 49,
+        "es_par": false,
+        "es_primo": false,
+        "es_cuadrado_perfecto": true,
+        "caminos_multiplicacion": 1,
+        "ultimo_digito": 9,
+        "combinaciones": [
+          "7x7"
+        ],
+        "descripcion": "Producto 49 generado por 1 operaciones",
+        "in_degree": 1,
+        "out_degree": 0,
+        "total_degree": 1,
+        "betweenness": 0.0,
+        "pagerank": 0.01799,
+        "closeness": 0.1047,
+        "detected_community": "cluster_1"
+      }
+    },
+    {
+      "id": "num_56",
+      "label": "56",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 56,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 6,
+        "combinaciones": [
+          "7x8",
+          "8x7"
+        ],
+        "descripcion": "Producto 56 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02118,
+        "closeness": 0.12698,
+        "detected_community": "cluster_1"
+      }
+    },
+    {
+      "id": "num_63",
+      "label": "63",
+      "group": "producto_impar",
+      "val": 18.4,
+      "color": "#f59e0b",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 63,
+        "es_par": false,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 3,
+        "combinaciones": [
+          "7x9",
+          "9x7"
+        ],
+        "descripcion": "Producto 63 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02141,
+        "closeness": 0.14062,
+        "detected_community": "cluster_1"
+      }
+    },
+    {
+      "id": "num_64",
+      "label": "64",
+      "group": "cuadrado_perfecto",
+      "val": 16.2,
+      "color": "#ec4899",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 64,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": true,
+        "caminos_multiplicacion": 1,
+        "ultimo_digito": 4,
+        "combinaciones": [
+          "8x8"
+        ],
+        "descripcion": "Producto 64 generado por 1 operaciones",
+        "in_degree": 1,
+        "out_degree": 0,
+        "total_degree": 1,
+        "betweenness": 0.0,
+        "pagerank": 0.01809,
+        "closeness": 0.11852,
+        "detected_community": "cluster_2"
+      }
+    },
+    {
+      "id": "num_72",
+      "label": "72",
+      "group": "producto_par",
+      "val": 18.4,
+      "color": "#3b82f6",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 72,
+        "es_par": true,
+        "es_primo": false,
+        "es_cuadrado_perfecto": false,
+        "caminos_multiplicacion": 2,
+        "ultimo_digito": 2,
+        "combinaciones": [
+          "8x9",
+          "9x8"
+        ],
+        "descripcion": "Producto 72 generado por 2 operaciones",
+        "in_degree": 2,
+        "out_degree": 0,
+        "total_degree": 2,
+        "betweenness": 0.0,
+        "pagerank": 0.02161,
+        "closeness": 0.14062,
+        "detected_community": "cluster_2"
+      }
+    },
+    {
+      "id": "num_81",
+      "label": "81",
+      "group": "cuadrado_perfecto",
+      "val": 16.2,
+      "color": "#ec4899",
+      "metadata": {
+        "tipo": "producto_resultado",
+        "valor_numerico": 81,
+        "es_par": false,
+        "es_primo": false,
+        "es_cuadrado_perfecto": true,
+        "caminos_multiplicacion": 1,
+        "ultimo_digito": 1,
+        "combinaciones": [
+          "9x9"
+        ],
+        "descripcion": "Producto 81 generado por 1 operaciones",
+        "in_degree": 1,
+        "out_degree": 0,
+        "total_degree": 1,
+        "betweenness": 0.0,
+        "pagerank": 0.01821,
+        "closeness": 0.13235,
+        "detected_community": "cluster_6"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "num_0",
+      "target": "num_0",
+      "weight": 19.0,
+      "label": "0×0=0, 0×1=0, 0×2=0 (+16)",
+      "type": "multiplicacion_multiplicacion_conmutativa_resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "0×0=0",
+          "0×1=0",
+          "0×2=0",
+          "0×3=0",
+          "0×4=0",
+          "0×5=0",
+          "0×6=0",
+          "0×7=0",
+          "0×8=0",
+          "0×9=0",
+          "0×1=0",
+          "0×2=0",
+          "0×3=0",
+          "0×4=0",
+          "0×5=0",
+          "0×6=0",
+          "0×7=0",
+          "0×8=0",
+          "0×9=0"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_0",
+      "weight": 2.0,
+      "label": "1×0=0, 1×0=0",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "1×0=0",
+          "1×0=0"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_0",
+      "weight": 2.0,
+      "label": "2×0=0, 2×0=0",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "2×0=0",
+          "2×0=0"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_0",
+      "weight": 2.0,
+      "label": "3×0=0, 3×0=0",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "3×0=0",
+          "3×0=0"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_0",
+      "weight": 2.0,
+      "label": "4×0=0, 4×0=0",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "4×0=0",
+          "4×0=0"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_0",
+      "weight": 2.0,
+      "label": "5×0=0, 5×0=0",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "5×0=0",
+          "5×0=0"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_0",
+      "weight": 2.0,
+      "label": "6×0=0, 6×0=0",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "6×0=0",
+          "6×0=0"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_0",
+      "weight": 2.0,
+      "label": "7×0=0, 7×0=0",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "7×0=0",
+          "7×0=0"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_0",
+      "weight": 2.0,
+      "label": "8×0=0, 8×0=0",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "8×0=0",
+          "8×0=0"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_0",
+      "weight": 2.0,
+      "label": "9×0=0, 9×0=0",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "9×0=0",
+          "9×0=0"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_1",
+      "weight": 1.0,
+      "label": "1×1=1",
+      "type": "resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "1×1=1"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_2",
+      "weight": 2.0,
+      "label": "1×2=2, 1×2=2",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "1×2=2",
+          "1×2=2"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_2",
+      "weight": 2.0,
+      "label": "2×1=2, 2×1=2",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "2×1=2",
+          "2×1=2"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_3",
+      "weight": 2.0,
+      "label": "1×3=3, 1×3=3",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "1×3=3",
+          "1×3=3"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_3",
+      "weight": 2.0,
+      "label": "3×1=3, 3×1=3",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "3×1=3",
+          "3×1=3"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_4",
+      "weight": 2.0,
+      "label": "1×4=4, 1×4=4",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "1×4=4",
+          "1×4=4"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_4",
+      "weight": 2.0,
+      "label": "4×1=4, 4×1=4",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "4×1=4",
+          "4×1=4"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_5",
+      "weight": 2.0,
+      "label": "1×5=5, 1×5=5",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "1×5=5",
+          "1×5=5"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_5",
+      "weight": 2.0,
+      "label": "5×1=5, 5×1=5",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "5×1=5",
+          "5×1=5"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_6",
+      "weight": 2.0,
+      "label": "1×6=6, 1×6=6",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "1×6=6",
+          "1×6=6"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_6",
+      "weight": 2.0,
+      "label": "6×1=6, 6×1=6",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "6×1=6",
+          "6×1=6"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_7",
+      "weight": 2.0,
+      "label": "1×7=7, 1×7=7",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "1×7=7",
+          "1×7=7"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_7",
+      "weight": 2.0,
+      "label": "7×1=7, 7×1=7",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "7×1=7",
+          "7×1=7"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_8",
+      "weight": 2.0,
+      "label": "1×8=8, 1×8=8",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "1×8=8",
+          "1×8=8"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_8",
+      "weight": 2.0,
+      "label": "8×1=8, 8×1=8",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "8×1=8",
+          "8×1=8"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_9",
+      "weight": 2.0,
+      "label": "1×9=9, 1×9=9",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "1×9=9",
+          "1×9=9"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_9",
+      "weight": 2.0,
+      "label": "9×1=9, 9×1=9",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "9×1=9",
+          "9×1=9"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_4",
+      "weight": 1.0,
+      "label": "2×2=4",
+      "type": "resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "2×2=4"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_6",
+      "weight": 2.0,
+      "label": "2×3=6, 2×3=6",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "2×3=6",
+          "2×3=6"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_6",
+      "weight": 2.0,
+      "label": "3×2=6, 3×2=6",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "3×2=6",
+          "3×2=6"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_8",
+      "weight": 2.0,
+      "label": "2×4=8, 2×4=8",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "2×4=8",
+          "2×4=8"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_8",
+      "weight": 2.0,
+      "label": "4×2=8, 4×2=8",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "4×2=8",
+          "4×2=8"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_10",
+      "weight": 2.0,
+      "label": "2×5=10, 2×5=10",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "2×5=10",
+          "2×5=10"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_10",
+      "weight": 2.0,
+      "label": "5×2=10, 5×2=10",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "5×2=10",
+          "5×2=10"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_12",
+      "weight": 2.0,
+      "label": "2×6=12, 2×6=12",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "2×6=12",
+          "2×6=12"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_12",
+      "weight": 2.0,
+      "label": "6×2=12, 6×2=12",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "6×2=12",
+          "6×2=12"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_14",
+      "weight": 2.0,
+      "label": "2×7=14, 2×7=14",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "2×7=14",
+          "2×7=14"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_14",
+      "weight": 2.0,
+      "label": "7×2=14, 7×2=14",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "7×2=14",
+          "7×2=14"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_16",
+      "weight": 2.0,
+      "label": "2×8=16, 2×8=16",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "2×8=16",
+          "2×8=16"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_16",
+      "weight": 2.0,
+      "label": "8×2=16, 8×2=16",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "8×2=16",
+          "8×2=16"
+        ]
+      }
+    },
+    {
+      "source": "num_2",
+      "target": "num_18",
+      "weight": 2.0,
+      "label": "2×9=18, 2×9=18",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "2×9=18",
+          "2×9=18"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_18",
+      "weight": 2.0,
+      "label": "9×2=18, 9×2=18",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "9×2=18",
+          "9×2=18"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_9",
+      "weight": 1.0,
+      "label": "3×3=9",
+      "type": "resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "3×3=9"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_12",
+      "weight": 2.0,
+      "label": "3×4=12, 3×4=12",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "3×4=12",
+          "3×4=12"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_12",
+      "weight": 2.0,
+      "label": "4×3=12, 4×3=12",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "4×3=12",
+          "4×3=12"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_15",
+      "weight": 2.0,
+      "label": "3×5=15, 3×5=15",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "3×5=15",
+          "3×5=15"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_15",
+      "weight": 2.0,
+      "label": "5×3=15, 5×3=15",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "5×3=15",
+          "5×3=15"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_18",
+      "weight": 2.0,
+      "label": "3×6=18, 3×6=18",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "3×6=18",
+          "3×6=18"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_18",
+      "weight": 2.0,
+      "label": "6×3=18, 6×3=18",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "6×3=18",
+          "6×3=18"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_21",
+      "weight": 2.0,
+      "label": "3×7=21, 3×7=21",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "3×7=21",
+          "3×7=21"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_21",
+      "weight": 2.0,
+      "label": "7×3=21, 7×3=21",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "7×3=21",
+          "7×3=21"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_24",
+      "weight": 2.0,
+      "label": "3×8=24, 3×8=24",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "3×8=24",
+          "3×8=24"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_24",
+      "weight": 2.0,
+      "label": "8×3=24, 8×3=24",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "8×3=24",
+          "8×3=24"
+        ]
+      }
+    },
+    {
+      "source": "num_3",
+      "target": "num_27",
+      "weight": 2.0,
+      "label": "3×9=27, 3×9=27",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "3×9=27",
+          "3×9=27"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_27",
+      "weight": 2.0,
+      "label": "9×3=27, 9×3=27",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "9×3=27",
+          "9×3=27"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_16",
+      "weight": 1.0,
+      "label": "4×4=16",
+      "type": "resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "4×4=16"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_20",
+      "weight": 2.0,
+      "label": "4×5=20, 4×5=20",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "4×5=20",
+          "4×5=20"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_20",
+      "weight": 2.0,
+      "label": "5×4=20, 5×4=20",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "5×4=20",
+          "5×4=20"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_24",
+      "weight": 2.0,
+      "label": "4×6=24, 4×6=24",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "4×6=24",
+          "4×6=24"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_24",
+      "weight": 2.0,
+      "label": "6×4=24, 6×4=24",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "6×4=24",
+          "6×4=24"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_28",
+      "weight": 2.0,
+      "label": "4×7=28, 4×7=28",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "4×7=28",
+          "4×7=28"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_28",
+      "weight": 2.0,
+      "label": "7×4=28, 7×4=28",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "7×4=28",
+          "7×4=28"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_32",
+      "weight": 2.0,
+      "label": "4×8=32, 4×8=32",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "4×8=32",
+          "4×8=32"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_32",
+      "weight": 2.0,
+      "label": "8×4=32, 8×4=32",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "8×4=32",
+          "8×4=32"
+        ]
+      }
+    },
+    {
+      "source": "num_4",
+      "target": "num_36",
+      "weight": 2.0,
+      "label": "4×9=36, 4×9=36",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "4×9=36",
+          "4×9=36"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_36",
+      "weight": 2.0,
+      "label": "9×4=36, 9×4=36",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "9×4=36",
+          "9×4=36"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_25",
+      "weight": 1.0,
+      "label": "5×5=25",
+      "type": "resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "5×5=25"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_30",
+      "weight": 2.0,
+      "label": "5×6=30, 5×6=30",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "5×6=30",
+          "5×6=30"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_30",
+      "weight": 2.0,
+      "label": "6×5=30, 6×5=30",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "6×5=30",
+          "6×5=30"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_35",
+      "weight": 2.0,
+      "label": "5×7=35, 5×7=35",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "5×7=35",
+          "5×7=35"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_35",
+      "weight": 2.0,
+      "label": "7×5=35, 7×5=35",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "7×5=35",
+          "7×5=35"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_40",
+      "weight": 2.0,
+      "label": "5×8=40, 5×8=40",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "5×8=40",
+          "5×8=40"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_40",
+      "weight": 2.0,
+      "label": "8×5=40, 8×5=40",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "8×5=40",
+          "8×5=40"
+        ]
+      }
+    },
+    {
+      "source": "num_5",
+      "target": "num_45",
+      "weight": 2.0,
+      "label": "5×9=45, 5×9=45",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "5×9=45",
+          "5×9=45"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_45",
+      "weight": 2.0,
+      "label": "9×5=45, 9×5=45",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "9×5=45",
+          "9×5=45"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_36",
+      "weight": 1.0,
+      "label": "6×6=36",
+      "type": "resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "6×6=36"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_42",
+      "weight": 2.0,
+      "label": "6×7=42, 6×7=42",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "6×7=42",
+          "6×7=42"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_42",
+      "weight": 2.0,
+      "label": "7×6=42, 7×6=42",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "7×6=42",
+          "7×6=42"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_48",
+      "weight": 2.0,
+      "label": "6×8=48, 6×8=48",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "6×8=48",
+          "6×8=48"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_48",
+      "weight": 2.0,
+      "label": "8×6=48, 8×6=48",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "8×6=48",
+          "8×6=48"
+        ]
+      }
+    },
+    {
+      "source": "num_6",
+      "target": "num_54",
+      "weight": 2.0,
+      "label": "6×9=54, 6×9=54",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "6×9=54",
+          "6×9=54"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_54",
+      "weight": 2.0,
+      "label": "9×6=54, 9×6=54",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "9×6=54",
+          "9×6=54"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_49",
+      "weight": 1.0,
+      "label": "7×7=49",
+      "type": "resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "7×7=49"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_56",
+      "weight": 2.0,
+      "label": "7×8=56, 7×8=56",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "7×8=56",
+          "7×8=56"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_56",
+      "weight": 2.0,
+      "label": "8×7=56, 8×7=56",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "8×7=56",
+          "8×7=56"
+        ]
+      }
+    },
+    {
+      "source": "num_7",
+      "target": "num_63",
+      "weight": 2.0,
+      "label": "7×9=63, 7×9=63",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "7×9=63",
+          "7×9=63"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_63",
+      "weight": 2.0,
+      "label": "9×7=63, 9×7=63",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "9×7=63",
+          "9×7=63"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_64",
+      "weight": 1.0,
+      "label": "8×8=64",
+      "type": "resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "8×8=64"
+        ]
+      }
+    },
+    {
+      "source": "num_8",
+      "target": "num_72",
+      "weight": 2.0,
+      "label": "8×9=72, 8×9=72",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "8×9=72",
+          "8×9=72"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_72",
+      "weight": 2.0,
+      "label": "9×8=72, 9×8=72",
+      "type": "multiplicacion_multiplicacion_conmutativa",
+      "color": "#818cf8",
+      "metadata": {
+        "operaciones": [
+          "9×8=72",
+          "9×8=72"
+        ]
+      }
+    },
+    {
+      "source": "num_9",
+      "target": "num_81",
+      "weight": 1.0,
+      "label": "9×9=81",
+      "type": "resonancia_cuadrada",
+      "color": "#f472b6",
+      "metadata": {
+        "operaciones": [
+          "9×9=81"
+        ]
+      }
+    },
+    {
+      "source": "num_1",
+      "target": "num_2",
+      "weight": 1.0,
+      "label": "Co-factores de 2",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_1",
+      "target": "num_3",
+      "weight": 1.0,
+      "label": "Co-factores de 3",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_1",
+      "target": "num_4",
+      "weight": 1.0,
+      "label": "Co-factores de 4",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_1",
+      "target": "num_5",
+      "weight": 1.0,
+      "label": "Co-factores de 5",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_1",
+      "target": "num_6",
+      "weight": 1.0,
+      "label": "Co-factores de 6",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_2",
+      "target": "num_3",
+      "weight": 1.0,
+      "label": "Co-factores de 6",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_1",
+      "target": "num_7",
+      "weight": 1.0,
+      "label": "Co-factores de 7",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_1",
+      "target": "num_8",
+      "weight": 1.0,
+      "label": "Co-factores de 8",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_2",
+      "target": "num_4",
+      "weight": 1.0,
+      "label": "Co-factores de 8",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_1",
+      "target": "num_9",
+      "weight": 1.0,
+      "label": "Co-factores de 9",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_2",
+      "target": "num_5",
+      "weight": 1.0,
+      "label": "Co-factores de 10",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_2",
+      "target": "num_6",
+      "weight": 1.0,
+      "label": "Co-factores de 12",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_3",
+      "target": "num_4",
+      "weight": 1.0,
+      "label": "Co-factores de 12",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_2",
+      "target": "num_7",
+      "weight": 1.0,
+      "label": "Co-factores de 14",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_2",
+      "target": "num_8",
+      "weight": 1.0,
+      "label": "Co-factores de 16",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_2",
+      "target": "num_9",
+      "weight": 1.0,
+      "label": "Co-factores de 18",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_3",
+      "target": "num_6",
+      "weight": 1.0,
+      "label": "Co-factores de 18",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_3",
+      "target": "num_5",
+      "weight": 1.0,
+      "label": "Co-factores de 15",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_3",
+      "target": "num_7",
+      "weight": 1.0,
+      "label": "Co-factores de 21",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_3",
+      "target": "num_8",
+      "weight": 1.0,
+      "label": "Co-factores de 24",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_4",
+      "target": "num_6",
+      "weight": 1.0,
+      "label": "Co-factores de 24",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_3",
+      "target": "num_9",
+      "weight": 1.0,
+      "label": "Co-factores de 27",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_4",
+      "target": "num_5",
+      "weight": 1.0,
+      "label": "Co-factores de 20",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_4",
+      "target": "num_7",
+      "weight": 1.0,
+      "label": "Co-factores de 28",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_4",
+      "target": "num_8",
+      "weight": 1.0,
+      "label": "Co-factores de 32",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_4",
+      "target": "num_9",
+      "weight": 1.0,
+      "label": "Co-factores de 36",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_5",
+      "target": "num_6",
+      "weight": 1.0,
+      "label": "Co-factores de 30",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_5",
+      "target": "num_7",
+      "weight": 1.0,
+      "label": "Co-factores de 35",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_5",
+      "target": "num_8",
+      "weight": 1.0,
+      "label": "Co-factores de 40",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_5",
+      "target": "num_9",
+      "weight": 1.0,
+      "label": "Co-factores de 45",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_6",
+      "target": "num_7",
+      "weight": 1.0,
+      "label": "Co-factores de 42",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_6",
+      "target": "num_8",
+      "weight": 1.0,
+      "label": "Co-factores de 48",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_6",
+      "target": "num_9",
+      "weight": 1.0,
+      "label": "Co-factores de 54",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_7",
+      "target": "num_8",
+      "weight": 1.0,
+      "label": "Co-factores de 56",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_7",
+      "target": "num_9",
+      "weight": 1.0,
+      "label": "Co-factores de 63",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    },
+    {
+      "source": "num_8",
+      "target": "num_9",
+      "weight": 1.0,
+      "label": "Co-factores de 72",
+      "type": "co_factores",
+      "color": "#475569",
+      "metadata": {}
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "hosting": {
+    "site": "grafos-network",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "**/.*",
+      ".venv/**",
+      "__pycache__/**",
+      "*.py",
+      "*.sh"
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(js|css|png|jpg|ico|svg|json)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=3600"
+          }
+        ]
+      }
+    ]
+  }
+}
