@@ -1692,10 +1692,19 @@ function downloadBlob(blob, filename) {
 function getCanvasSize() {
   const container = document.getElementById('canvasContainer');
   return {
-    width: container.clientWidth || 800,
-    height: container.clientHeight || 600
+    width: container.clientWidth || window.innerWidth || 360,
+    height: container.clientHeight || (window.innerHeight - 120) || 500
   };
 }
+
+// Redimensionamiento adaptativo en orientación vertical/horizontal de celulares
+window.addEventListener('resize', () => {
+  const { width, height } = getCanvasSize();
+  if (state.simulation && state.activeLayout === 'force') {
+    state.simulation.force('center', d3.forceCenter(width / 2, height / 2).strength(state.physics.gravity));
+    state.simulation.alpha(0.25).restart();
+  }
+});
 
 function updateHudStatus(text) {
   document.getElementById('hudStatusMsg').textContent = text;

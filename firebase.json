@@ -13,11 +13,20 @@
     ],
     "headers": [
       {
-        "source": "**/*.@(js|css|png|jpg|ico|svg|json)",
+        "source": "**/*.@(html|json)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=3600"
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, must-revalidate"
           }
         ]
       }
